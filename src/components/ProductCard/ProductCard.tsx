@@ -10,7 +10,7 @@ import {
 import { Product } from '../../models';
 import { useState, useEffect, useContext } from 'react';
 import { ClothingShopContext} from '../useContext';
-import {FaEye, FaEyeSlash, FaCartPlus, FaShoppingCart} from 'react-icons/fa';
+import {FaEye, FaEyeSlash} from 'react-icons/fa';
 
 export const ProductCard = ({ name, imageUrl, price,quantity }: Product) => {
   const {products, saved,removeItem,addToCart,removeToWL,addToWL} = useContext(ClothingShopContext);
