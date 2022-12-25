@@ -2,8 +2,12 @@ import { Product } from "../../models/Product";
 
 export enum ShopActionType {
     ADD = 'add',
-    REMOVE = 'remove',
+    DELETE = 'deleteC',
     UPDATE = 'update',
+    UPDATEQTY = 'addQty',
+    UPDATEITEMS = 'totalItems',
+    HAVE = 'addWL',
+    REMOVE = 'remove',
   }
   
   export type ShopAction = {
@@ -16,8 +20,8 @@ export enum ShopActionType {
     payload: product,
   });
   
-  export const remove = (product: Product): ShopAction => ({
-    type: ShopActionType.REMOVE,
+  export const deleteC = (product: Product): ShopAction => ({
+    type: ShopActionType.DELETE,
     payload: product,
   });
 
@@ -25,3 +29,26 @@ export enum ShopActionType {
     type: ShopActionType.UPDATE,
     payload: total,
   });
+
+  export const addQty = (priceProd: number): ShopAction => ({
+    type: ShopActionType.UPDATEQTY,
+    payload: priceProd,
+  });
+  
+  export const totalItems = (totalitems: number): ShopAction => ({
+    type: ShopActionType.UPDATEITEMS,
+    payload: totalitems,
+  });
+
+  export const addWL = (product: Product): ShopAction => ({
+    type: ShopActionType.HAVE,
+    payload: product,
+  });
+  
+  export const remove = (product: Product): ShopAction => ({
+    type: ShopActionType.REMOVE,
+    payload: product,
+  });
+
+
+ 
